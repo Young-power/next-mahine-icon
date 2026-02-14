@@ -1,0 +1,26 @@
+next-mahine-icon
+
+next-mahine-icon est une librairie d’icônes SVG server-first conçue spécifiquement pour Next.js (App Router & Server Components).
+
+🔑 Fonctionnalités
+
+Icônes SVG rendues côté serveur
+
+Zéro JavaScript côté client
+
+Compatible Server Components (sans "use client")
+
+React utilisé uniquement pour les types
+
+Tree-shaking parfait (1 icône = 1 fichier)
+
+Taille contrôlée via width / height ou w-* h-*
+
+Couleur via currentColor (Tailwind / CSS)
+
+⭐ Spécialité
+
+Contrairement aux autres librairies d’icônes, next-mahine-icon n’est pas juste “compatible” avec les Server Components —
+elle est pensée pour eux dès le départ.
+
+Aucune abstraction inutile, aucun runtime, uniquement des SVG propres et prévisibles.

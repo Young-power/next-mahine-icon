@@ -1,0 +1,17 @@
+import type { SVGProps } from "react";
+
+export function GalleryHorizontalEnd(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width={24}
+      height={24}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    > <path d="M2 7v10" /> <path d="M6 5v14" /> <rect width="12" height="18" x="10" y="3" rx="2" /></svg>
+  );
+}

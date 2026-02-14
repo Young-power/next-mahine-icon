@@ -1,0 +1,60 @@
+{
+  "name": "next-mahine-icon",
+  "version": "1.0.0",
+  "description": "Server-first SVG icons for Next.js (0 JS)",
+  "license": "MIT",
+  "author": "Mahaman Mahine Kamagaté",
+  "keywords": [
+    "nextjs",
+    "icons",
+    "svg",
+    "server-components",
+    "react",
+    "zero-js"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "nmi": "dist/success.js"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+"scripts": {
+  "build": "tsup",
+  "copy:success": "cp scripts/success.js dist/success.js",
+  "postbuild": "pnpm copy:success",
+
+
+  "copy:icons": "tsx scripts/copy-lucide-icons.ts",
+  "generate:icons": "tsx scripts/generate-icons.ts",
+  "generate:index": "tsx scripts/generate-index.ts",
+
+
+  "generate": "pnpm copy:icons && pnpm generate:icons && pnpm generate:index"
+},
+  "packageManager": "pnpm@10.28.2",
+  "devDependencies": {
+    "@types/node": "^25.2.0",
+    "@types/react": "^19.2.10",
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "terminal-image": "^4.2.0"
+  }
+}
