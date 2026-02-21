@@ -24,3 +24,16 @@ Contrairement aux autres librairies d’icônes, next-mahine-icon n’est pas ju
 elle est pensée pour eux dès le départ.
 
 Aucune abstraction inutile, aucun runtime, uniquement des SVG propres et prévisibles.
+
+
+
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond circulaire -->
+  <circle cx="100" cy="100" r="90" fill="#1a1b26" />
+  <!-- M avec effet engrenage (dents) -->
+  <path d="M70 140 L70 60 L85 60 L100 90 L115 60 L130 60 L130 140 L115 140 L115 85 L100 115 L85 85 L85 140 L70 140" fill="#ffffff" />
+  <!-- Dents d'engrenage autour du M -->
+  <circle cx="100" cy="100" r="40" fill="none" stroke="#3b82f6" stroke-width="8" stroke-dasharray="8 12" stroke-linecap="round" />
+  <!-- Triangle Next -->
+  <polygon points="160,80 180,100 160,120" fill="#3b82f6" />
+</svg>
