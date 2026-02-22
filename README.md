@@ -2,7 +2,7 @@
 
 <p align="center">
   <img
-    src="https://raw.githubusercontent.com/Young-power/next-mahine-icon/main/public/assets/logo1.png"
+    src="https://raw.githubusercontent.com/Young-power/next-mahine-icon/main/public/assets/logo2.png"
     width="180"
     alt="Next Mahine RSC Inspector Logo"
   />
