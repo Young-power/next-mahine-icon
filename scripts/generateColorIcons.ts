@@ -1,44 +1,3 @@
-next-mahine-icon
-
-next-mahine-icon est une librairie d’icônes SVG server-first conçue spécifiquement pour Next.js (App Router & Server Components).
-
-🔑 Fonctionnalités
-
-Icônes SVG rendues côté serveur
-
-Zéro JavaScript côté client
-
-Compatible Server Components (sans "use client")
-
-React utilisé uniquement pour les types
-
-Tree-shaking parfait (1 icône = 1 fichier)
-
-Taille contrôlée via width / height ou w-* h-*
-
-Couleur via currentColor (Tailwind / CSS)
-
-⭐ Spécialité
-
-Contrairement aux autres librairies d’icônes, next-mahine-icon n’est pas juste “compatible” avec les Server Components —
-elle est pensée pour eux dès le départ.
-
-Aucune abstraction inutile, aucun runtime, uniquement des SVG propres et prévisibles.
-
-
-
-<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Fond circulaire -->
-  <circle cx="100" cy="100" r="90" fill="#1a1b26" />
-  <!-- M avec effet engrenage (dents) -->
-  <path d="M70 140 L70 60 L85 60 L100 90 L115 60 L130 60 L130 140 L115 140 L115 85 L100 115 L85 85 L85 140 L70 140" fill="#ffffff" />
-  <!-- Dents d'engrenage autour du M -->
-  <circle cx="100" cy="100" r="40" fill="none" stroke="#3b82f6" stroke-width="8" stroke-dasharray="8 12" stroke-linecap="round" />
-  <!-- Triangle Next -->
-  <polygon points="160,80 180,100 160,120" fill="#3b82f6" />
-</svg>
-
-//////////////////
 import fs from "fs";
 import path from "path";
 
@@ -80,31 +39,27 @@ function fixStyle(svg: string) {
 function cleanSvg(svg: string) {
   return fixStyle(
     svg
-      // Supprime XML et commentaires inutiles
       .replace(/<\?xml.*?\?>/g, "")
       .replace(/<!--.*?-->/g, "")
       .replace(/\n/g, "")
       .replace(/\s{2,}/g, " ")
-
-      // Fix React attributes
       .replace(/stroke-width=/g, "strokeWidth=")
       .replace(/stroke-linecap=/g, "strokeLinecap=")
       .replace(/stroke-linejoin=/g, "strokeLinejoin=")
       .replace(/fill-rule=/g, "fillRule=")
       .replace(/clip-rule=/g, "clipRule=")
       .replace(/class=/g, "className=")
-
-      // XML fixes
       .replace(/xmlns:xlink=/g, "xmlnsXlink=")
       .replace(/xml:space=/g, "xmlSpace=")
       .replace(/xlink:href=/g, "xlinkHref=")
-
-      // Supprime enable-background dans le SVG
       .replace(/enable-background="[^"]*"/g, "")
+      // Supprime width et height existants pour éviter les doublons
+      .replace(/\swidth="[^"]*"/g, "")
+      .replace(/\sheight="[^"]*"/g, "")
   );
 }
 
-// Génération du composant React
+// Génération du composant React avec taille par défaut 30
 function generateComponent(svg: string, componentName: string) {
   const content = cleanSvg(svg).replace(
     /<svg([^>]*)>/,
@@ -113,9 +68,12 @@ function generateComponent(svg: string, componentName: string) {
 
   return `import type { SVGProps } from "react";
 
-export function ${componentName}(props: SVGProps<SVGSVGElement>) {
+export function ${componentName}({ width = 30, height = 30, ...props }: SVGProps<SVGSVGElement>) {
   return (
-    ${content}
+    ${content.replace(
+      /<svg([^>]*)>/,
+      `<svg$1 width={width} height={height} {...props}>`
+    )}
   );
 }
 `;

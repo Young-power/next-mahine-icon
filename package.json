@@ -40,6 +40,7 @@
 
   "copy:icons": "tsx scripts/copy-lucide-icons.ts",
   "generate:icons": "tsx scripts/generate-icons.ts",
+  "generate:colorIcons":"tsx scripts/generateColorIcons.ts",
   "generate:index": "tsx scripts/generate-index.ts",
 
 

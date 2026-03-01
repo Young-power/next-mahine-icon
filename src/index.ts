@@ -1687,3 +1687,42 @@ export { Zap } from "./icons/components/Zap";
 export { ZapOff } from "./icons/components/ZapOff";
 export { ZoomIn } from "./icons/components/ZoomIn";
 export { ZoomOut } from "./icons/components/ZoomOut";
+
+//colors Icons
+export { AbrahamLincoln } from "./icons/colorComponents/AbrahamLincoln";
+export { AdobePhotoshop } from "./icons/colorComponents/AdobePhotoshop";
+export { AmazonColor } from "./icons/colorComponents/AmazonColor";
+export { AndroidColor } from "./icons/colorComponents/AndroidColor";
+export { CancelColor } from "./icons/colorComponents/CancelColor";
+export { DiscordColor } from "./icons/colorComponents/DiscordColor";
+export { EmailColor } from "./icons/colorComponents/EmailColor";
+export { FigmaColor } from "./icons/colorComponents/FigmaColor";
+export { FolderColor } from "./icons/colorComponents/FolderColor";
+export { GoatColor } from "./icons/colorComponents/GoatColor";
+export { GithubColor } from "./icons/colorComponents/GithubColor";
+export { GoogleColor } from "./icons/colorComponents/GoogleColor";
+export { GooglePlayStore } from "./icons/colorComponents/GooglePlayStore";
+export { GoogleSheets } from "./icons/colorComponents/GoogleSheets";
+export { InstagramColor } from "./icons/colorComponents/InstagramColor";
+export { InstagramVerificationBadge } from "./icons/colorComponents/InstagramVerificationBadge";
+export { JavaColor } from "./icons/colorComponents/JavaColor";
+export { JavascriptColor } from "./icons/colorComponents/JavascriptColor";
+export { LinkedinColor } from "./icons/colorComponents/LinkedinColor";
+export { LionColor } from "./icons/colorComponents/LionColor";
+export { LocationsColor } from "./icons/colorComponents/LocationsColor";
+export { MacFolderColor } from "./icons/colorComponents/MacFolderColor";
+export { MoonBlack } from "./icons/colorComponents/MoonBlack";
+export { PythonColor } from "./icons/colorComponents/PythonColor";
+export { ShinyStarColor } from "./icons/colorComponents/ShinyStarColor";
+export { StarColor } from "./icons/colorComponents/StarColor";
+export { TelegramColor } from "./icons/colorComponents/TelegramColor";
+export { TiktokColor } from "./icons/colorComponents/TiktokColor";
+export { WhatsappColor } from "./icons/colorComponents/WhatsappColor";
+export { XColor } from "./icons/colorComponents/XColor";
+export { YoutubeColor } from "./icons/colorComponents/YoutubeColor";
+
+
+
+
+
+
